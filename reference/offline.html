@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-tertiary": "#ffffff", "inverse-primary": "#93ccff", "surface-container-high": "#e2e7ff", "secondary-fixed-dim": "#89ceff", "outline": "#707881", "on-primary-fixed-variant": "#004b73", "primary-container": "#007bb9", "on-secondary-fixed": "#001e2f", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-container": "#fffbff", "on-error-container": "#93000a", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "on-surface-variant": "#3f4850", "surface-container": "#eaedff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#004c6e", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "secondary-fixed": "#c9e6ff", "on-primary-fixed": "#001d31", "tertiary-fixed": "#ffdcc3", "on-surface": "#131b2e", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "secondary-container": "#39b8fd", "on-tertiary-fixed": "#2f1500", "on-secondary-container": "#004666", "error-container": "#ffdad6", "inverse-on-surface": "#eef0ff", "on-primary-container": "#fdfcff", "surface-bright": "#faf8ff", "on-background": "#131b2e", "on-tertiary-fixed-variant": "#6e3900", "primary-fixed-dim": "#93ccff", "surface-container-lowest": "#ffffff", "secondary": "#006591", "surface-tint": "#006398", "error": "#ba1a1a", "primary": "#006194", "on-error": "#ffffff", "surface-container-highest": "#dae2fd", "tertiary-container": "#b15f00", "on-secondary": "#ffffff", "surface": "#faf8ff", "tertiary": "#8d4b00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "2rem", "space-xl": "2.75rem", "space-md": "1.25rem", "margin": "1.5rem", "gutter-mobile": "0.75rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "margin-mobile": "1rem" }, "fontFamily": { "label-md": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["JetBrains Mono"], "body-md": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "headline-xl": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Space Grotesk"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex items-center justify-center w-11 h-11 bg-primary text-on-primary rounded"><span class="material-symbols-outlined text-[24px]">sailing</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">JETSKINAV // OS</span><h1 class="font-headline-md text-headline-md font-bold uppercase text-on-surface leading-none tracking-tight">Cockpit</h1></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container px-space-xs py-1 rounded"><div class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-[16px]">satellite_alt</span><span class="font-label-sm text-label-sm">12</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">water_drop</span><span class="font-label-sm text-label-sm">LOCK</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center text-tertiary"><span class="material-symbols-outlined text-[16px]">light_mode</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface"><span class="material-symbols-outlined text-[16px]">battery_charging_full</span><span class="font-label-sm text-label-sm">94%</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 bg-surface pb-32"><div class="flex flex-col w-full px-margin-mobile pb-space-xl gap-space-md">
+<!-- Storage Telemetry HUD Block -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-md gap-space-sm mt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">sd_card</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Armazenamento Offline</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase bg-surface-container-high px-space-xs py-0.5 rounded text-secondary font-bold">SSD Marítimo</span>
+</div>
+<!-- Progress Bar (Segmented Look) -->
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 42%;"></div>
+<div class="h-full bg-secondary-container" style="width: 18%;"></div>
+<div class="h-full bg-surface-container-high flex-1"></div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Cartas Baixadas</span>
+<span class="font-headline-md text-headline-md text-primary leading-none">1.8 <span class="font-label-md text-label-md text-on-surface">GB</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Regiões Ativas</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Espaço Livre</span>
+<span class="font-headline-md text-headline-md text-secondary leading-none">2.4 <span class="font-label-md text-label-md text-on-surface">GB</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Pronto p/ 4 Regiões</span>
+</div>
+</div>
+</div>
+<!-- Tactical Connection & Auto-Sync Banner -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label-md text-label-md uppercase text-on-surface font-bold">Marina Wi-Fi 5GHz</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-bold px-space-xs py-0.5 rounded">68 Mbps // Estável</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<!-- Auto Update Toggle Button -->
+<button class="flex items-center justify-between h-14 px-space-sm bg-surface-container-lowest rounded-lg active:scale-95 transition-transform shadow-sm text-left" id="toggle-wifi-sync">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Auto-Sync</span>
+<span class="font-body-md text-body-md text-on-surface font-bold leading-tight">Em Wi-Fi</span>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full p-0.5 flex items-center justify-end">
+<div class="w-5 h-5 bg-on-primary rounded-full shadow"></div>
+</div>
+</button>
+<!-- Clear Cache Button -->
+<button class="flex items-center justify-between h-14 px-space-sm bg-surface-container-lowest rounded-lg active:scale-95 transition-transform shadow-sm text-left" id="btn-purge-cache">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Lixeira Cache</span>
+<span class="font-body-md text-body-md text-error font-bold leading-tight">Limpar 140MB</span>
+</div>
+<span class="material-symbols-outlined text-error text-[24px]">delete_sweep</span>
+</button>
+</div>
+</div>
+<!-- Primary CTA: Baixar Nova Região -->
+<button class="w-full min-h-[64px] bg-primary text-on-primary rounded-xl flex items-center justify-center gap-space-sm px-space-md shadow-md active:bg-on-primary-fixed-variant transition-colors select-none" id="btn-new-region">
+<span class="material-symbols-outlined text-[28px]">downloading</span>
+<span class="font-headline-md text-headline-md uppercase tracking-wider text-on-primary">+ BAIXAR NOVA REGIÃO NÁUTICA</span>
+</button>
+<!-- Quick-Cache Ride Mode (1-Touch 15NM) -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container text-[22px]">radar</span>
+<span class="font-label-md text-label-md uppercase font-bold text-on-surface">Cache Tático do Passeio Atual</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest text-tertiary-container font-bold px-space-xs py-0.5 rounded">GPS LOCK</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-tight">
+      Garante isolamento offline imediato das isóbatas, pedras e canais em torno do Jet Ski.
+    </p>
+<button class="w-full h-14 mt-1 bg-secondary text-on-secondary rounded-lg flex items-center justify-between px-space-md font-label-lg text-label-lg uppercase tracking-wider shadow-sm active:opacity-90" id="btn-quick-15nm">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+        BAIXAR RAIO 15 NM (POSIÇÃO ATUAL)
+      </span>
+<span class="bg-on-secondary/20 px-2 py-0.5 rounded font-label-md text-label-md">~85 MB</span>
+</button>
+</div>
+<!-- Section Title -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Cartas Armazenadas (3)</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Prontas p/ Off-Grid</span>
+</div>
+<!-- Downloaded Regions List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Card 1: Litoral Norte SP -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase bg-surface-container text-secondary font-bold px-1.5 py-0.5 rounded">100% OFFLINE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DHN VETORIAL</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface leading-snug">Litoral Norte SP - Ilhabela &amp; São Sebastião</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">Canal de São Sebastião, Ilha de Búzios, Vitória, Toque-Toque</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-bold text-primary leading-none">485</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">MB</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Tiles</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">14.280</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Isóbatas</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Até 50m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Avisos</span>
+<span class="font-label-md text-label-md font-bold text-secondary">Há 2 dias</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 h-12 bg-surface-container text-primary rounded-lg font-label-md text-label-md uppercase font-bold flex items-center justify-center gap-1 active:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+          Verificar Atualizações
+        </button>
+<button aria-label="Remover região" class="w-12 h-12 bg-surface-container text-on-surface-variant rounded-lg flex items-center justify-center active:bg-error-container active:text-error">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Paraty & Angra (Update Pending) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase bg-tertiary-fixed text-on-tertiary-fixed font-bold px-1.5 py-0.5 rounded">UPDATE PENDENTE (+12 MB)</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface leading-snug">Baía de Paraty &amp; Angra dos Reis - RJ</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">Ilha Grande, Saco do Céu, Enseada de Paraty, Ilha Gipoia</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-bold text-primary leading-none">720</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">MB</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Tiles</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">21.400</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Batimetria</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">DHN Alta Res</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Alerta CIMS</span>
+<span class="font-label-md text-label-md font-bold text-tertiary-container">Boia 04 Movida</span>
+</div>
+</div>
+<!-- High Priority Update CTA -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 h-14 bg-tertiary-container text-on-tertiary-container rounded-lg font-label-lg text-label-lg uppercase tracking-wide font-bold flex items-center justify-center gap-2 shadow-sm active:opacity-90">
+<span class="material-symbols-outlined text-[20px]">system_update</span>
+          BAIXAR UPDATE (12 MB)
+        </button>
+<button aria-label="Remover região" class="w-14 h-14 bg-surface-container text-on-surface-variant rounded-lg flex items-center justify-center active:bg-error-container active:text-error">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Cananéia & Iguape -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase bg-surface-container text-secondary font-bold px-1.5 py-0.5 rounded">OFFLINE PRONTO</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ESTUÁRIO</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface leading-snug">Cananéia &amp; Iguape (Canal &amp; Estuário)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant pt-0.5">Mar Pequeno, Ilha Comprida, Barra de Cananéia</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md font-bold text-primary leading-none">210</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">MB</span>
+</div>
+</div>
+<!-- Specs Matrix -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Tiles</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">6.120</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Bancos de Areia</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Maré Crítica</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Status</span>
+<span class="font-label-md text-label-md font-bold text-secondary">Sincronizado</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 h-12 bg-surface-container text-primary rounded-lg font-label-md text-label-md uppercase font-bold flex items-center justify-center gap-1 active:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">map</span>
+          Exibir na Carta
+        </button>
+<button aria-label="Remover região" class="w-12 h-12 bg-surface-container text-on-surface-variant rounded-lg flex items-center justify-center active:bg-error-container active:text-error">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Resolution & Layer Selector Module -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-md mt-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Camadas &amp; Resolução</h2>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant leading-tight">Configuração padrão para os novos downloads offline</span>
+</div>
+<!-- Nautical Layer Chips (Wet Screen Friendly 50px min height) -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Camadas Ativas p/ Download</span>
+<!-- Chip 1 -->
+<button class="layer-chip w-full min-h-[52px] px-space-md rounded-lg flex items-center justify-between bg-inverse-surface text-inverse-on-surface shadow-sm transition-all" data-checked="true">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-secondary-container">water</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Batimetria e Isóbatas</span>
+<span class="font-label-sm text-label-sm opacity-80">Curvas de nível 1m, 2m, 5m, 10m, 20m</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">check_box</span>
+</button>
+<!-- Chip 2 -->
+<button class="layer-chip w-full min-h-[52px] px-space-md rounded-lg flex items-center justify-between bg-inverse-surface text-inverse-on-surface shadow-sm transition-all" data-checked="true">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-secondary-container">warning</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Avisos &amp; Boias CIMS</span>
+<span class="font-label-sm text-label-sm opacity-80">Pedras submersas, naufrágios e faróis</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">check_box</span>
+</button>
+<!-- Chip 3 -->
+<button class="layer-chip w-full min-h-[52px] px-space-md rounded-lg flex items-center justify-between bg-surface-container text-on-surface shadow-sm transition-all" data-checked="false">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant">satellite</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Satélite Costeiro HD</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Imagens aéreas (Gera +450MB/região)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">check_box_outline_blank</span>
+</button>
+<!-- Chip 4 -->
+<button class="layer-chip w-full min-h-[52px] px-space-md rounded-lg flex items-center justify-between bg-inverse-surface text-inverse-on-surface shadow-sm transition-all" data-checked="true">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-secondary-container">anchor</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Rampas &amp; Pontos de Apoio</span>
+<span class="font-label-sm text-label-sm opacity-80">Marinas, postos flutuantes e ancoradouros</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">check_box</span>
+</button>
+</div>
+<!-- Zoom Level Stepper Selector -->
+<div class="flex flex-col gap-space-xs pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Nível de Zoom Máximo (Tiles)</span>
+<span class="font-label-md text-label-md text-primary font-bold">Z15 // Precisão de 2.5 Metros</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs">
+<button class="h-14 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold flex flex-col items-center justify-center active:bg-inverse-surface active:text-inverse-on-surface">
+<span>Z13</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Canal</span>
+</button>
+<button class="h-14 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold flex flex-col items-center justify-center active:bg-inverse-surface active:text-inverse-on-surface">
+<span>Z14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Porto</span>
+</button>
+<button class="h-14 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-md text-label-md font-bold flex flex-col items-center justify-center shadow-sm">
+<span>Z15</span>
+<span class="font-label-sm text-label-sm text-secondary-container font-bold">Padrão</span>
+</button>
+<button class="h-14 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold flex flex-col items-center justify-center active:bg-inverse-surface active:text-inverse-on-surface">
+<span>Z16</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+600MB</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Z15 recomendado para navegação esportiva e costeira rasa de Jet Ski.</span>
+</div>
+</div>
+<!-- Micro Technical Disclaimer -->
+<div class="flex items-center justify-center gap-space-xs text-center py-space-sm opacity-80">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">DHN / Marinha do Brasil • WGS-84 • Sync v4.12</span>
+</div>
+</div>
+<script>
+  // Interactive UI handling for neoprene-gloved / wet-finger feedback
+  document.querySelectorAll('.layer-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const isChecked = chip.getAttribute('data-checked') === 'true';
+      const newChecked = !isChecked;
+      chip.setAttribute('data-checked', newChecked ? 'true' : 'false');
+      
+      const icon = chip.querySelector('.material-symbols-outlined:last-child');
+      
+      if (newChecked) {
+        chip.classList.remove('bg-surface-container', 'text-on-surface');
+        chip.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+        icon.textContent = 'check_box';
+        icon.classList.remove('text-on-surface-variant');
+        icon.classList.add('text-secondary-container');
+      } else {
+        chip.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+        chip.classList.add('bg-surface-container', 'text-on-surface');
+        icon.textContent = 'check_box_outline_blank';
+        icon.classList.remove('text-secondary-container');
+        icon.classList.add('text-on-surface-variant');
+      }
+    });
+  });
+
+  const quickBtn = document.getElementById('btn-quick-15nm');
+  if (quickBtn) {
+    quickBtn.addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">autorenew</span> BAIXANDO RAIO 15 NM... (34%)';
+      this.classList.add('bg-tertiary-container');
+      setTimeout(() => {
+        this.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span> 15 NM OFFLINE PRONTO';
+        this.classList.remove('bg-tertiary-container');
+        this.classList.add('bg-primary');
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.classList.remove('bg-primary');
+          this.classList.add('bg-secondary');
+        }, 3000);
+      }, 1500);
+    });
+  }
+
+  const syncToggle = document.getElementById('toggle-wifi-sync');
+  if (syncToggle) {
+    let syncActive = true;
+    syncToggle.addEventListener('click', () => {
+      syncActive = !syncActive;
+      const thumbWrap = syncToggle.querySelector('.w-10');
+      if (syncActive) {
+        thumbWrap.classList.remove('bg-surface-container-high', 'justify-start');
+        thumbWrap.classList.add('bg-primary', 'justify-end');
+      } else {
+        thumbWrap.classList.remove('bg-primary', 'justify-end');
+        thumbWrap.classList.add('bg-surface-container-high', 'justify-start');
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="bg-inverse-surface text-inverse-on-surface font-bold"><div class="grid grid-cols-4 items-stretch h-20 px-gutter"><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="cockpit" href="#"><span class="material-symbols-outlined text-[26px]">speed</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cockpit</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="carta-nautica" href="#"><span class="material-symbols-outlined text-[26px]">map</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Carta</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="rotas-waypoints" href="#"><span class="material-symbols-outlined text-[26px]">polyline</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Rotas</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-error hover:bg-error-container/40 transition-colors" data-path="emergencia-sos" href="#"><span class="material-symbols-outlined text-[26px]">emergency_home</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">SOS</span></a></div></nav></body></html>

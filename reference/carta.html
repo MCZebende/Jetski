@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-tertiary": "#ffffff", "inverse-primary": "#93ccff", "surface-container-high": "#e2e7ff", "secondary-fixed-dim": "#89ceff", "outline": "#707881", "on-primary-fixed-variant": "#004b73", "primary-container": "#007bb9", "on-secondary-fixed": "#001e2f", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-container": "#fffbff", "on-error-container": "#93000a", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "on-surface-variant": "#3f4850", "surface-container": "#eaedff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#004c6e", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "secondary-fixed": "#c9e6ff", "on-primary-fixed": "#001d31", "tertiary-fixed": "#ffdcc3", "on-surface": "#131b2e", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "secondary-container": "#39b8fd", "on-tertiary-fixed": "#2f1500", "on-secondary-container": "#004666", "error-container": "#ffdad6", "inverse-on-surface": "#eef0ff", "on-primary-container": "#fdfcff", "surface-bright": "#faf8ff", "on-background": "#131b2e", "on-tertiary-fixed-variant": "#6e3900", "primary-fixed-dim": "#93ccff", "surface-container-lowest": "#ffffff", "secondary": "#006591", "surface-tint": "#006398", "error": "#ba1a1a", "primary": "#006194", "on-error": "#ffffff", "surface-container-highest": "#dae2fd", "tertiary-container": "#b15f00", "on-secondary": "#ffffff", "surface": "#faf8ff", "tertiary": "#8d4b00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "2rem", "space-xl": "2.75rem", "space-md": "1.25rem", "margin": "1.5rem", "gutter-mobile": "0.75rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "margin-mobile": "1rem" }, "fontFamily": { "label-md": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["JetBrains Mono"], "body-md": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "headline-xl": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Space Grotesk"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex items-center justify-center w-11 h-11 bg-primary text-on-primary rounded"><span class="material-symbols-outlined text-[24px]">sailing</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">JETSKINAV // OS</span><h1 class="font-headline-md text-headline-md font-bold uppercase text-on-surface leading-none tracking-tight">Cockpit</h1></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container px-space-xs py-1 rounded"><div class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-[16px]">satellite_alt</span><span class="font-label-sm text-label-sm">12</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">water_drop</span><span class="font-label-sm text-label-sm">LOCK</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center text-tertiary"><span class="material-symbols-outlined text-[16px]">light_mode</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface"><span class="material-symbols-outlined text-[16px]">battery_charging_full</span><span class="font-label-sm text-label-sm">94%</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 bg-surface pb-32"><div class="flex flex-col w-full relative">
+<!-- Dynamic Audio / Hazard Flasher (Top Bar) -->
+<div class="px-gutter pt-space-xs pb-space-xs">
+<div class="bg-error-container text-on-error-container px-space-md py-space-xs rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[22px] animate-pulse">crisis_alert</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-extrabold">ALERTA BATIMÉTRICO ATIVO</span>
+<span class="font-label-md text-label-md font-bold tracking-tight">BANCO DE AREIA A 280M • PROF. 0.8M</span>
+</div>
+</div>
+<div class="bg-error text-on-error px-space-xs py-0.5 rounded font-label-sm text-label-sm tracking-wider uppercase font-bold">
+        SONAR 85dB
+      </div>
+</div>
+</div>
+<!-- Top Floating Marine HUD / Navigation Control Strip -->
+<div class="px-gutter py-space-xs flex flex-col gap-space-xs z-20">
+<div class="bg-surface-container-lowest shadow-md rounded-xl p-space-xs flex items-center justify-between gap-space-xs">
+<!-- Quick Telemetry & Cockpit Glance -->
+<a class="h-12 px-space-sm bg-primary text-on-primary rounded-lg flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-wider shadow-sm active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+<span>Cockpit</span>
+</a>
+<!-- Instant Telemetry Chip -->
+<div class="flex-1 bg-surface-container-high px-space-sm py-1.5 rounded-lg flex items-center justify-around text-on-surface">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">SOG (VEL)</span>
+<span class="font-headline-md text-headline-md leading-none text-on-surface font-extrabold">32.4<span class="font-label-sm text-label-sm ml-0.5 text-secondary">KT</span></span>
+</div>
+<div class="w-px h-7 bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">COG (RUMO)</span>
+<span class="font-headline-md text-headline-md leading-none text-on-surface font-extrabold">120°<span class="font-label-sm text-label-sm ml-0.5 text-secondary">SE</span></span>
+</div>
+</div>
+<!-- Tactical Layer Selector -->
+<button class="h-12 px-space-sm bg-surface-container text-on-surface-variant rounded-lg flex items-center gap-1 font-label-md text-label-md uppercase font-bold active:bg-surface-container-high transition-colors" id="layerToggleBtn">
+<span class="material-symbols-outlined text-[20px] text-primary">layers</span>
+<span>Camadas</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Telemetry Secondary Micro-Strip -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-[14px]">satellite_alt</span>
+<span class="font-bold text-on-surface">14 SATS</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-semibold">TILE VETORIAL OFFLINE</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[14px]">explore</span>
+<span>MODO: <strong class="text-on-surface">PROA ACIMA (HDG)</strong></span>
+</div>
+</div>
+</div>
+<!-- Interactive Nautical Chart Canvas Area -->
+<div class="relative w-full h-[380px] bg-secondary-fixed/30 overflow-hidden shadow-inner my-space-xs">
+<!-- SVG Vector Marine Map Renderer -->
+<svg class="w-full h-full absolute inset-0 select-none" preserveaspectratio="none" viewbox="0 0 400 380">
+<!-- Water Depth Shading Gradient -->
+<defs>
+<!-- Sand Hazard Stipple / Stripe Pattern -->
+<pattern height="8" id="sandHatch" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="8">
+<line stroke="#dc2626" stroke-opacity="0.5" stroke-width="2" x1="0" x2="0" y1="0" y2="8"></line>
+</pattern>
+<!-- Shallow Water Pattern -->
+<pattern height="12" id="shallowDot" patternunits="userSpaceOnUse" width="12">
+<circle cx="2" cy="2" fill="#006591" fill-opacity="0.3" r="1"></circle>
+</pattern>
+<!-- Pulsing Hazard Marker -->
+<radialgradient cx="50%" cy="50%" id="hazardPulse" r="50%">
+<stop offset="0%" stop-color="#ba1a1a" stop-opacity="0.45"></stop>
+<stop offset="70%" stop-color="#ba1a1a" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#ba1a1a" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+<!-- Marine Grid / Graticule Lines -->
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="0" x2="400" y1="80" y2="80"></line>
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="0" x2="400" y1="180" y2="180"></line>
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="0" x2="400" y1="280" y2="280"></line>
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="90" x2="90" y1="0" y2="380"></line>
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="210" x2="210" y1="0" y2="380"></line>
+<line stroke="#007bb9" stroke-dasharray="3,3" stroke-opacity="0.15" x1="330" x2="330" y1="0" y2="380"></line>
+<!-- Coordinate Grid Text Labels -->
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="94" y="20">045°21'W</text>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="214" y="20">045°20'W</text>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="334" y="20">045°19'W</text>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="6" y="76">23°48'S</text>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="6" y="176">23°49'S</text>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" opacity="0.6" x="6" y="276">23°50'S</text>
+<!-- Coastal Landmass & Shoreline (Marina Porto Real) -->
+<path d="M 0,0 L 130,0 Q 115,50 85,90 T 50,150 Q 25,180 0,210 Z" fill="#e2e7ff" stroke="#707881" stroke-width="2"></path>
+<path d="M 0,0 L 130,0 Q 115,50 85,90 T 50,150 Q 25,180 0,210 Z" fill="url(#shallowDot)"></path>
+<!-- Marina Dock Pier Graphic -->
+<polyline fill="#bfc7d2" points="45,100 68,112 60,128 38,115" stroke="#283044" stroke-width="1.5"></polyline>
+<text fill="#131b2e" font-family="Space Grotesk" font-size="10" font-weight="700" x="12" y="105">MARINA PORTO REAL</text>
+<text fill="#3f4850" font-family="JetBrains Mono" font-size="8" x="12" y="118">PONTO DE PARTIDA</text>
+<!-- Bathymetric Depth Contours (Isobaths) -->
+<!-- 2m Shallow Water Zone -->
+<path d="M 130,0 C 120,70 95,120 70,180 C 45,240 20,290 0,330 L 0,0 Z" fill="#c9e6ff" fill-opacity="0.5"></path>
+<path d="M 130,0 C 120,70 95,120 70,180 C 45,240 20,290 0,330" fill="none" stroke="#007bb9" stroke-dasharray="4,2" stroke-width="1"></path>
+<text fill="#004c6e" font-family="JetBrains Mono" font-size="9" font-weight="bold" x="75" y="160">- 2.0m</text>
+<!-- 5m Bathymetric Contour -->
+<path d="M 190,0 C 175,90 145,160 120,240 C 95,320 80,360 65,380" fill="none" stroke="#006194" stroke-width="1.5"></path>
+<text fill="#006194" font-family="JetBrains Mono" font-size="9" font-weight="bold" x="135" y="200">- 5.0m</text>
+<!-- 10m Bathymetric Contour -->
+<path d="M 270,0 C 255,110 220,200 195,290 C 180,340 170,380 165,380" fill="none" stroke="#004b73" stroke-width="1.5"></path>
+<text fill="#004b73" font-family="JetBrains Mono" font-size="9" font-weight="bold" x="215" y="240">- 10.0m</text>
+<!-- Hazard Area: Banco de Areia (Shallow Sandbar) -->
+<g>
+<circle cx="230" cy="140" fill="url(#hazardPulse)" r="42"></circle>
+<ellipse cx="230" cy="140" fill="url(#sandHatch)" rx="36" ry="24" stroke="#ba1a1a" stroke-dasharray="5,3" stroke-width="2"></ellipse>
+<circle cx="230" cy="140" fill="#ba1a1a" r="3"></circle>
+<!-- Danger Callout Marker -->
+<rect fill="#ffdad6" height="24" rx="4" stroke="#ba1a1a" stroke-width="1" width="118" x="175" y="82"></rect>
+<text fill="#93000a" font-family="Space Grotesk" font-size="8.5" font-weight="700" x="180" y="94">BANCO DE AREIA (0.5M)</text>
+<text fill="#93000a" font-family="JetBrains Mono" font-size="7.5" font-weight="600" x="180" y="103">BUFFER 250M • RISCO</text>
+</g>
+<!-- Vessel Track (Rastro Náutico GPX Navegado) -->
+<path d="M 55,120 Q 90,170 125,205 T 180,240" fill="none" stroke="#007bb9" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- Active Navigation Leg Course Line to Waypoint -->
+<line stroke="#006194" stroke-linecap="round" stroke-width="3" x1="180" x2="330" y1="240" y2="155"></line>
+<!-- Course corridor limit lines (XTE boundary 20m) -->
+<line stroke="#006194" stroke-dasharray="3,3" stroke-opacity="0.4" stroke-width="1" x1="175" x2="325" y1="230" y2="145"></line>
+<line stroke="#006194" stroke-dasharray="3,3" stroke-opacity="0.4" stroke-width="1" x1="185" x2="335" y1="250" y2="165"></line>
+<!-- Destination Waypoint: Praia do Forte -->
+<g transform="translate(330, 155)">
+<circle cx="0" cy="0" fill="#ffdcc3" r="14" stroke="#b15f00" stroke-width="2"></circle>
+<circle cx="0" cy="0" fill="#8d4b00" r="5"></circle>
+<!-- Waypoint Floating Label Tag -->
+<rect fill="#283044" height="26" rx="4" width="130" x="-65" y="-36"></rect>
+<text fill="#eef0ff" font-family="Space Grotesk" font-size="9" font-weight="700" text-anchor="middle" x="0" y="-22">WP1: PRAIA DO FORTE</text>
+<text fill="#ffdcc3" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="0" y="-12">4.2 NM • ETA 8 MIN</text>
+</g>
+<!-- Active Jet Ski Vessel Vessel Heading & Position -->
+<g id="vesselIndicator" transform="translate(180, 240) rotate(32)">
+<!-- Heading Prediction Vector (10 seconds ahead) -->
+<line stroke="#007bb9" stroke-dasharray="4,2" stroke-width="2.5" x1="0" x2="0" y1="0" y2="-55"></line>
+<circle cx="0" cy="-55" fill="#007bb9" r="3"></circle>
+<!-- High-Contrast Vessel Shape -->
+<ellipse cx="0" cy="0" fill="#ffffff" rx="14" ry="14" stroke="#131b2e" stroke-width="2"></ellipse>
+<polygon fill="#006194" points="0,-16 9,10 0,6 -9,10" stroke="#ffffff" stroke-width="1.5"></polygon>
+<circle cx="0" cy="0" fill="#ffffff" r="2.5"></circle>
+</g>
+</svg>
+<!-- Compass Rose / North Indicator (Top Right) -->
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-1.5 shadow-md flex flex-col items-center justify-center w-12 h-12">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">navigation</span>
+</div>
+<span class="font-label-sm text-label-sm font-black text-on-surface leading-none -mt-1">N</span>
+</div>
+<!-- Nautical Scale Indicator (Bottom Left) -->
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-1 rounded-md shadow-sm flex flex-col gap-0.5">
+<div class="w-16 h-1.5 bg-on-surface flex">
+<div class="w-1/2 h-full bg-surface-container-lowest"></div>
+<div class="w-1/2 h-full bg-primary"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+<span>0</span>
+<span>0.5 NM</span>
+</div>
+</div>
+<!-- Quick Map Flight Controls (Right Edge Float) -->
+<div class="absolute right-3 top-18 bottom-12 flex flex-col justify-center gap-space-xs">
+<button class="w-11 h-11 bg-surface-container-lowest text-on-surface rounded-xl shadow-md flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+<button class="w-11 h-11 bg-surface-container-lowest text-on-surface rounded-xl shadow-md flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[24px]">remove</span>
+</button>
+<button class="w-11 h-11 bg-primary text-on-primary rounded-xl shadow-md flex items-center justify-center active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[22px]">my_location</span>
+</button>
+<button class="w-11 h-11 bg-surface-container-lowest text-secondary rounded-xl shadow-md flex items-center justify-center active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[22px]">screen_rotation</span>
+</button>
+</div>
+<!-- Water Spray / Live Status Floating Tag -->
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 px-space-xs py-1 rounded-md shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">RADAR BATIMÉTRICO 360°</span>
+</div>
+</div>
+<!-- Bottom Floating Action & Telemetry Card -->
+<div class="px-gutter flex flex-col gap-space-xs mb-space-sm z-20">
+<!-- Active Waypoint Telemetry Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-sm flex flex-col gap-space-xs">
+<!-- Waypoint Target Title & Status -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">DESTINO EM CURSO</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold leading-tight">PRAIA DO FORTE</span>
+</div>
+</div>
+<div class="bg-surface-container px-space-xs py-1 rounded text-right">
+<span class="font-label-sm text-label-sm text-secondary font-bold">XTE (DESVIO)</span>
+<div class="font-label-md text-label-md font-extrabold text-on-surface">12m EB</div>
+</div>
+</div>
+<!-- Navigation Metric Badges -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">DISTÂNCIA</span>
+<span class="font-body-lg text-body-lg text-on-surface font-extrabold">4.2 <span class="font-label-sm text-label-sm text-secondary font-bold">NM</span></span>
+</div>
+<div class="flex flex-col items-center border-l border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">TEMPO ESTIMADO</span>
+<span class="font-body-lg text-body-lg text-on-surface font-extrabold">07:45 <span class="font-label-sm text-label-sm text-secondary font-bold">MIN</span></span>
+</div>
+<div class="flex flex-col items-center border-l border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">RUMO ALVO</span>
+<span class="font-body-lg text-body-lg text-on-surface font-extrabold">118° <span class="font-label-sm text-label-sm text-secondary font-bold">MAG</span></span>
+</div>
+</div>
+<!-- Large Tactile Nautical Action Buttons (Neoprene Glove friendly) -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<!-- Mark POI Button -->
+<button class="h-16 px-space-sm bg-primary text-on-primary rounded-xl flex items-center justify-center gap-space-xs font-label-lg text-label-lg uppercase tracking-wider font-extrabold shadow-sm active:scale-98 transition-transform">
+<span class="material-symbols-outlined text-[24px]">add_location_alt</span>
+<span>+ MARCAR POI</span>
+</button>
+<!-- Manage Offline Charts Button -->
+<button class="h-16 px-space-sm bg-surface-container-highest text-on-surface rounded-xl flex items-center justify-center gap-space-xs font-label-lg text-label-lg uppercase tracking-wider font-bold shadow-sm active:scale-98 transition-transform">
+<span class="material-symbols-outlined text-[22px] text-secondary">cloud_download</span>
+<span>OFFLINE</span>
+</button>
+</div>
+<!-- Tactical Marine Warning / Depth Safety Setting Footer -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold uppercase">ALERTA SONORO: 85dB ATIVO</span>
+</div>
+<button class="font-label-sm text-label-sm uppercase font-bold text-primary flex items-center gap-0.5 hover:underline">
+<span>Configurar Buffer (250m)</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Dynamic Highlight Script -->
+<script>
+    (function initNauticalMap() {
+      // Highlight the Carta tab in the Shell
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'carta-nautica') {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('bg-inverse-surface', 'text-inverse-on-surface', 'font-bold');
+        } else if (link.getAttribute('data-path') !== 'emergencia-sos') {
+          link.classList.remove('bg-inverse-surface', 'text-inverse-on-surface', 'font-bold');
+          link.classList.add('text-on-surface-variant');
+        }
+      });
+
+      // Quick layer toggle micro-interaction
+      const layerBtn = document.getElementById('layerToggleBtn');
+      if (layerBtn) {
+        layerBtn.addEventListener('click', () => {
+          const isPressed = layerBtn.getAttribute('aria-pressed') === 'true';
+          layerBtn.setAttribute('aria-pressed', !isPressed);
+          if (!isPressed) {
+            layerBtn.classList.add('bg-primary', 'text-on-primary');
+            layerBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          } else {
+            layerBtn.classList.remove('bg-primary', 'text-on-primary');
+            layerBtn.classList.add('bg-surface-container', 'text-on-surface-variant');
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="bg-inverse-surface text-inverse-on-surface font-bold"><div class="grid grid-cols-4 items-stretch h-20 px-gutter"><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="cockpit" href="#"><span class="material-symbols-outlined text-[26px]">speed</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cockpit</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="carta-nautica" href="#"><span class="material-symbols-outlined text-[26px]">map</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Carta</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="rotas-waypoints" href="#"><span class="material-symbols-outlined text-[26px]">polyline</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Rotas</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-error hover:bg-error-container/40 transition-colors" data-path="emergencia-sos" href="#"><span class="material-symbols-outlined text-[26px]">emergency_home</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">SOS</span></a></div></nav></body></html>

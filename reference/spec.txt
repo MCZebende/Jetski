@@ -1,0 +1,274 @@
+# Arquitetura e Especificação Técnica: PWC Navigation App (Jet Ski Nav)
+
+## 1. Arquitetura Recomendada
+
+### Stack Tecnológica: Flutter (Dart)
+**Por que Flutter sobre React Native para Jet Ski?**
+1. **Renderização 60-120 FPS via Impeller/Skia**: Essencial para renderizar mapas vetoriais fluidos e rastros de GPS (breadcrumbs) sem gargalos de bridge JavaScript.
+2. **Processamento em Background & Isolates**: O rastreamento de GPS, cálculo de buffers geográficos (geofencing de baixios) e gravação de GPX rodam em um Dart Isolate separado, evitando congelamento da UI durante navegação em alta velocidade.
+3. **Consistência de Canvas & Alto Contraste**: Renderização de UI idêntica em telas OLED/LCD de alta luminosidade em Android e iOS.
+
+---
+
+### Estrutura de Pastas (Clean Architecture + Feature-First)
+
+```text
+lib/
+├── core/
+│   ├── constants/
+│   │   ├── app_colors.dart         # Paletas de alto contraste (Sunlight Mode)
+│   │   └── navigation_constants.dart
+│   ├── errors/
+│   │   └── failures.dart
+│   ├── services/
+│   │   ├── battery_service.dart    # Otimização de energia dinâmica
+│   │   ├── location_service.dart   # Stream GNSS/GPS de alta frequência
+│   │   └── storage_service.dart    # SQLite/Isar local
+│   └── utils/
+│       ├── geo_math.dart           # Fórmulas Haversine, Bearing (COG), SOG
+│       └── gpx_exporter.dart       # Serialização GPX padrão
+├── features/
+│   ├── navigation/                 # CORE: Tela de Navegação & HUD Glance
+│   │   ├── data/
+│   │   │   ├── datasources/local_tile_datasource.dart
+│   │   │   └── repositories/track_repository_impl.dart
+│   │   ├── domain/
+│   │   │   ├── entities/telemetry_point.dart
+│   │   │   ├── entities/hazard_zone.dart
+│   │   │   └── usecases/record_track_usecase.dart
+│   │   └── presentation/
+│   │       ├── controllers/navigation_controller.dart (Riverpod/Bloc)
+│   │       ├── widgets/glance_hud_overlay.dart
+│   │       ├── widgets/offline_map_view.dart
+│   │       └── screens/cockpit_screen.dart
+│   ├── safety/                     # SOS, Compartilhamento e Alertas
+│   │   ├── data/datasources/sms_emergency_datasource.dart
+│   │   └── presentation/screens/sos_modal_screen.dart
+│   ├── trip_history/               # Tracks gravados, rotas e estatísticas
+│   │   └── presentation/screens/trips_screen.dart
+│   └── settings/                   # Unidades (Nós/km/h), calibração de consumo
+└── main.dart
+```
+
+---
+
+## 2. Bibliotecas Essenciais
+
+| Categoria | Biblioteca | Justificativa |
+|---|---|---|
+| **Mapas & Vetores** | `flutter_map` + `latlong2` ou `mapbox_maps_flutter` | Renderização ultra rápida, suporte nativo a offline MBTiles/Slippy Tiles sem custo inicial de licença. |
+| **Tiles Offline** | `flutter_map_tile_caching` (FMTC) | Download em background de áreas com gerenciamento de cache SQLite e cotas de megabytes. |
+| **Geolocalização / GPS** | `geolocator` + `flutter_compass` | Acesso ao multi-GNSS (GPS, GLONASS, Galileo) com precisão fina (`LocationAccuracy.bestForNavigation`) e magnetômetro para COG estacionário. |
+| **Persistência / BD Local** | `isar` ou `drift` (SQLite) | Leitura/escrita ultrarrápida de pontos de telemetria (1-2 Hz) sem consumir I/O excessivo. |
+| **Gerenciamento de Estado** | `flutter_riverpod` | Reatividade performática, isolamento de estado do HUD versus mapa. |
+| **Alerta Sonoro/Háptico** | `audioplayers` + `vibration` | Alertas sonoros em volume máximo e vibração contínua ao se aproximar de baixios/pedras. |
+| **Exportação de Dados** | `share_plus` + `xml` | Exportação de arquivos `.gpx` e compartilhamento nativo direto. |
+| **Manter Tela Ligada** | `wakelock_plus` | Evita bloqueio de tela com luvas molhadas e alta velocidade. |
+
+---
+
+## 3. Wireframes Textuais das Telas Principais
+
+### Tela 1: Cockpit Principal (Modo Glance / Alta Visibilidade)
+```text
++-------------------------------------------------------------+
+| [ BATERIA: 88% ]        [ SATS: 14 ]         [ MODO: SOL ☀️ ]|
++-------------------------------------------------------------+
+|                                                             |
+|                      VELOCIDADE ATUAL                       |
+|                          58.4                               |
+|                         NÓS (KT)                            |
+|                  (84 km/h | 4500 RPM aprox)                 |
+|                                                             |
++-------------------------------------------------------------+
+|     RUMO (COG)     |   DISTÂNCIA   |    TEMPO DE PASSEIO    |
+|        042° NE     |    18.6 NM    |        01:14:22        |
++-------------------------------------------------------------+
+|                                                             |
+|  [ MINI MAPA / RADAR DE BAIXIOS ]                           |
+|  (Rastro azul ciano, ponto atual, aviso de perigo a 200m)   |
+|  ⚠️ ALERTA: ÁREA RASA A 300M (PROF. EST.: 0.8M)             |
+|                                                             |
++-------------------------------------------------------------+
+| [ 🔴 SOS ]      [ ⏸️ PAUSAR TRACK ]       [ 🗺️ MODO MAPA ]   |
+| (Toque longo)   (Botão 80px)              (Alternar tela)   |
++-------------------------------------------------------------+
+```
+
+### Tela 2: Modo Mapa Completo & Alertas de Zonas
+```text
++-------------------------------------------------------------+
+| [< VOLTAR HUD]     SOG: 32 kt | RUMO: 180°    [CAMADAS ▾]   |
++-------------------------------------------------------------+
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+| ~ ~ ~ ~ ~ [PONTO DE PARTIDA: MARINA] ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  |
+| ~ ~ ~ ~ ~ ~ ~ ~ \ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ \ [BREADCRUMB TRAIL] ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  |
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+| ~ ~ ~ ~ [ ⚠️ BANCO DE AREIA (0.5m) ] ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ (▲ SEU JET SKI) ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
+| ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ |
++-------------------------------------------------------------+
+| WAYPOINT ATUAL: PRAIA DO FORTE (4.2 NM - RUMO 120°)         |
++-------------------------------------------------------------+
+| [+ MARCAR POI / WAYPOINT]   |   [📥 DOWNLOAD MAPA OFFLINE]  |
++-------------------------------------------------------------+
+```
+
+### Tela 3: Alerta Crítico & SOS
+```text
++-------------------------------------------------------------+
+|  ⚠️ ALERTA DE SEGURANÇA / SOS ACIONADO                       |
++-------------------------------------------------------------+
+|                                                             |
+|               LOCALIZAÇÃO ATUAL TRANSMITIDA:                |
+|                 LAT: 23° 49' 12.4" S                        |
+|                 LONG: 045° 21' 44.8" W                      |
+|                                                             |
+|           STATUS: Conectado via Satélite/Rede Móvel         |
+|                                                             |
+|   [ DISPARAR SMS / WHATSAPP COM LINK DE RESGATE GOOGLE MAPS ]|
+|   [ CONTATAR CAPITANIA / GUARDA-VIDAS (193 / 185) ]         |
+|                                                             |
+|   [ CANCELAR DISPARO (Contagem regressiva: 10s) ]           |
++-------------------------------------------------------------+
+```
+
+---
+
+## 4. Estrutura Inicial do Projeto (Código Base)
+
+### `lib/core/services/location_service.dart`
+```dart
+import 'dart:async';
+import 'package:geolocator/geolocator.dart';
+
+class TelemetryPoint {
+  final double latitude;
+  final double longitude;
+  final double speedKnots; // SOG em nós
+  final double headingDegrees; // COG (0 - 360)
+  final double altitude;
+  final DateTime timestamp;
+
+  TelemetryPoint({
+    required this.latitude,
+    required this.longitude,
+    required this.speedKnots,
+    required this.headingDegrees,
+    required this.altitude,
+    required this.timestamp,
+  });
+}
+
+class LocationService {
+  StreamSubscription<Position>? _positionStream;
+  final _telemetryController = StreamController<TelemetryPoint>.broadcast();
+
+  Stream<TelemetryPoint> get telemetryStream => _telemetryController.stream;
+
+  Future<void> startTracking() async {
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      throw Exception('Serviço de GPS desativado.');
+    }
+
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        throw Exception('Permissão de GPS negada.');
+      }
+    }
+
+    // Configuração de alto desempenho para veículos rápidos em água
+    const locationSettings = LocationSettings(
+      accuracy: LocationAccuracy.bestForNavigation,
+      distanceFilter: 3, // Emite a cada 3 metros ou a cada segundo
+    );
+
+    _positionStream = Geolocator.getPositionStream(locationSettings: locationSettings)
+        .listen((Position position) {
+      // 1 m/s = 1.94384 nós
+      final double knots = position.speed * 1.94384;
+      
+      _telemetryController.add(
+        TelemetryPoint(
+          latitude: position.latitude,
+          longitude: position.longitude,
+          speedKnots: knots < 0.5 ? 0.0 : knots, // Dead-zone para ruído parado
+          headingDegrees: position.heading,
+          altitude: position.altitude,
+          timestamp: position.timestamp,
+        ),
+      );
+    });
+  }
+
+  void stopTracking() {
+    _positionStream?.cancel();
+  }
+}
+```
+
+### `lib/core/utils/gpx_exporter.dart`
+```dart
+import 'package:xml/xml.dart';
+import '../services/location_service.dart';
+
+class GpxExporter {
+  static String buildGpx(List<TelemetryPoint> points, {String trackName = "Passeio Jet Ski"}) {
+    final builder = XmlBuilder();
+    builder.processing('xml', 'version="1.0" encoding="UTF-8"');
+    builder.element('gpx', attributes: {
+      'version': '1.1',
+      'creator': 'JetSkiNav MVP',
+      'xmlns': 'http://www.topografix.com/GPX/1/1',
+    }, nest: () {
+      builder.element('trk', nest: () {
+        builder.element('name', nest: trackName);
+        builder.element('trkseg', nest: () {
+          for (final pt in points) {
+            builder.element('trkpt', attributes: {
+              'lat': pt.latitude.toString(),
+              'lon': pt.longitude.toString(),
+            }, nest: () {
+              builder.element('ele', nest: pt.altitude.toStringAsFixed(1));
+              builder.element('time', nest: pt.timestamp.toUtc().toIso8601String());
+              builder.element('extensions', nest: () {
+                builder.element('speed_knots', nest: pt.speedKnots.toStringAsFixed(2));
+                builder.element('course', nest: pt.headingDegrees.toStringAsFixed(1));
+              });
+            });
+          }
+        });
+      });
+    });
+    return builder.buildDocument().toXmlString(pretty: true);
+  }
+}
+```
+
+---
+
+## 5. Riscos e Limitações Conhecidas (Navegação Mobile em Jet Ski)
+
+1. **Superaquecimento Solar e Brilho Máximo**:
+   - *Problema*: Celulares montados no guidão sob sol direto de 35°C com brilho a 100% e GPS ativo entram em thermal throttling e desligam em 20–40 minutos.
+   - *Mitigação*: Implementar modo de economia térmica (renderização do mapa reduzida a 1 FPS quando no modo Glance, fundo estritamente branco com texto preto fosco, alertar sobre temperatura).
+
+2. **Água na Tela Touch (Ghost Touches)**:
+   - *Problema*: Gotas de água salgada conduzem eletricidade e acionam toques fantasmas no display capacitivo.
+   - *Mitigação*:
+     - Modos de bloqueio de tela ("Water Lock").
+     - Ações críticas (como SOS ou Pausa) exigem **toque longo de 3 segundos** com preenchimento visual circular.
+     - Botões grandes com áreas de toque mínimas de 72x72 pt.
+     - Utilização de botões físicos de volume como atalhos (se suportado).
+
+3. **Latência de Alerta em Alta Velocidade**:
+   - *Problema*: A 50 nós (~92 km/h), o jet ski percorre ~25 metros por segundo. Se o GPS fizer amostragem de 1 Hz e o geofence for de 50 metros, o piloto tem apenas 2 segundos para desviar de uma pedra ou banco de areia.
+   - *Mitigação*: Zonas de alerta dinâmicas proporcionais à velocidade (`Buffer = Speed_mps * 10 segundos`).
+
+4. **Perda Total de Sinal Celular (GSM/4G/5G)**:
+   - *Problema*: Apenas 1 a 2 milhas náuticas da costa o sinal de celular frequentemente cai para zero.
+   - *Mitigação*: Arquitetura 100% offline-first; cache prévio de mapa mandatório antes do início da viagem; SOS baseado em SMS com coordenadas compactas pré-geradas (SMS funciona com sinal residual fraco quando dados falham).

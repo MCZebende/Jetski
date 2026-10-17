@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-tertiary": "#ffffff", "inverse-primary": "#93ccff", "surface-container-high": "#e2e7ff", "secondary-fixed-dim": "#89ceff", "outline": "#707881", "on-primary-fixed-variant": "#004b73", "primary-container": "#007bb9", "on-secondary-fixed": "#001e2f", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-container": "#fffbff", "on-error-container": "#93000a", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "on-surface-variant": "#3f4850", "surface-container": "#eaedff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#004c6e", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "secondary-fixed": "#c9e6ff", "on-primary-fixed": "#001d31", "tertiary-fixed": "#ffdcc3", "on-surface": "#131b2e", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "secondary-container": "#39b8fd", "on-tertiary-fixed": "#2f1500", "on-secondary-container": "#004666", "error-container": "#ffdad6", "inverse-on-surface": "#eef0ff", "on-primary-container": "#fdfcff", "surface-bright": "#faf8ff", "on-background": "#131b2e", "on-tertiary-fixed-variant": "#6e3900", "primary-fixed-dim": "#93ccff", "surface-container-lowest": "#ffffff", "secondary": "#006591", "surface-tint": "#006398", "error": "#ba1a1a", "primary": "#006194", "on-error": "#ffffff", "surface-container-highest": "#dae2fd", "tertiary-container": "#b15f00", "on-secondary": "#ffffff", "surface": "#faf8ff", "tertiary": "#8d4b00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "2rem", "space-xl": "2.75rem", "space-md": "1.25rem", "margin": "1.5rem", "gutter-mobile": "0.75rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "margin-mobile": "1rem" }, "fontFamily": { "label-md": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["JetBrains Mono"], "body-md": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "headline-xl": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Space Grotesk"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex items-center justify-center w-11 h-11 bg-primary text-on-primary rounded shadow-sm"><span class="material-symbols-outlined text-[24px]">sailing</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider font-bold">JETSKINAV // OS</span><h1 class="font-headline-md text-headline-md font-bold uppercase text-on-surface leading-none tracking-tight">Rotas</h1></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container px-space-xs py-1 rounded border border-outline-variant/30"><div class="flex items-center gap-0.5 text-secondary" title="Sinal Satélite GPS"><span class="material-symbols-outlined text-[16px]">satellite_alt</span><span class="font-label-sm text-label-sm font-bold">12</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface-variant" title="Bloqueio de Toque para Água"><span class="material-symbols-outlined text-[16px]">water_drop</span><span class="font-label-sm text-label-sm font-bold">LOCK</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center text-tertiary" title="Modo Alto Contraste Solar"><span class="material-symbols-outlined text-[16px]">light_mode</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface" title="Bateria da Embarcação"><span class="material-symbols-outlined text-[16px]">battery_charging_full</span><span class="font-label-sm text-label-sm font-bold">94%</span></div></div><div class="w-9 h-9 rounded bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 bg-surface pb-32"><div class="flex flex-col w-full">
+<!-- Root Container with High-Contrast Tactical Marine Spacing -->
+<div class="px-margin-mobile flex flex-col gap-space-sm pb-space-lg">
+<!-- 1. CABEÇALHO DE AÇÃO DA ROTA -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">PLANEJAMENTO TÁTICO // DHN-OFFLINE</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_done</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SYNC LOC</span>
+</div>
+</div>
+<!-- Editable Route Name -->
+<div class="flex items-center justify-between gap-2 bg-surface-container-low px-3 py-2.5 rounded-lg">
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">alt_route</span>
+<input aria-label="Nome da rota náutica" class="bg-transparent font-headline-md text-[17px] leading-tight font-bold text-on-surface w-full focus:outline-none truncate" type="text" value="Travessia Ilhabela ➔ Ilha das Couves"/>
+</div>
+<button class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-primary transition-colors flex-shrink-0" title="Editar Título da Rota" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<!-- Quick Safety Badges Bar -->
+<div class="grid grid-cols-3 gap-1.5 pt-1">
+<div class="bg-secondary-container/20 px-2 py-1.5 rounded flex items-center justify-center gap-1 text-center">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">verified_user</span>
+<span class="font-label-sm text-[9px] uppercase font-bold text-secondary truncate">AUTO-ROUTING DHN</span>
+</div>
+<div class="bg-surface-container px-2 py-1.5 rounded flex items-center justify-center gap-1 text-center">
+<span class="material-symbols-outlined text-[14px] text-primary font-bold">straighten</span>
+<span class="font-label-sm text-[9px] uppercase font-bold text-on-surface-variant truncate">CALADO MÍN 1.2M</span>
+</div>
+<div class="bg-surface-container-high px-2 py-1.5 rounded flex items-center justify-center gap-1 text-center">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container font-bold">local_gas_station</span>
+<span class="font-label-sm text-[9px] uppercase font-bold text-tertiary-container truncate">RESERVA +35%</span>
+</div>
+</div>
+</div>
+<!-- 2. MINIATURA DE MAPA TÁTICO INTERATIVO (SVG VETORIAL DETALHADO) -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-highest shadow-sm">
+<!-- Water Background Simulation & Bathymetry Layer -->
+<svg class="w-full h-72 block select-none" fill="none" viewbox="0 0 380 288" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="waterGrad" r="70%">
+<stop offset="0%" stop-color="#dae2fd"></stop>
+<stop offset="100%" stop-color="#c9e6ff"></stop>
+</radialgradient>
+<pattern height="32" id="gridMarine" patternunits="userSpaceOnUse" width="32">
+<path d="M 32 0 L 0 0 0 32" fill="none" stroke="#bfc7d2" stroke-opacity="0.4" stroke-width="0.5"></path>
+</pattern>
+<lineargradient id="routeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#007bb9"></stop>
+<stop offset="100%" stop-color="#39b8fd"></stop>
+</lineargradient>
+</defs>
+<!-- Ocean base and tactical coordinate grid -->
+<rect fill="url(#waterGrad)" height="100%" width="100%"></rect>
+<rect fill="url(#gridMarine)" height="100%" width="100%"></rect>
+<!-- Topographic / Coastline Shapes -->
+<!-- West Coastline (Ilhabela mainland section) -->
+<path d="M 0,0 L 70,0 C 65,50 82,90 60,140 C 40,185 55,220 20,288 L 0,288 Z" fill="#eaedff" opacity="0.9"></path>
+<path d="M 0,0 L 70,0 C 65,50 82,90 60,140 C 40,185 55,220 20,288 L 0,288 Z" fill="none" stroke="#707881" stroke-dasharray="3,2" stroke-width="1.5"></path>
+<!-- Southeast Islet (Ponta da Sela Outcrop) -->
+<path d="M 175,190 Q 190,175 205,195 Q 215,220 190,230 Q 165,215 175,190 Z" fill="#dae2fd" stroke="#707881" stroke-width="1.2"></path>
+<text class="font-label-sm" fill="#3f4850" font-size="7" font-weight="700" x="180" y="240">LAJE DA SELA</text>
+<!-- Northeast Destination Island (Ilha das Couves / Enseada) -->
+<path d="M 310,35 Q 360,15 375,60 Q 360,110 325,95 Q 295,70 310,35 Z" fill="#eaedff" stroke="#707881" stroke-width="1.5"></path>
+<text class="font-label-sm" fill="#131b2e" font-size="8" font-weight="800" x="315" y="72">I. DAS COUVES</text>
+<!-- Bathymetric contour lines (Isóbatas) -->
+<!-- 2m Shallows Buffer around rocks -->
+<path d="M 155,180 Q 195,150 225,185 Q 235,235 185,250 Q 145,230 155,180 Z" fill="none" opacity="0.8" stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="1.5"></path>
+<!-- 5m Depth Contour -->
+<path d="M 75,30 Q 110,120 115,180 Q 130,240 95,288" fill="none" stroke="#007bb9" stroke-opacity="0.5" stroke-width="1"></path>
+<text fill="#006194" font-family="JetBrains Mono" font-size="7" font-weight="600" x="100" y="110">5.0m</text>
+<!-- 10m Depth Contour (Deep Fairway) -->
+<path d="M 125,20 Q 160,100 240,140 Q 300,165 370,180" fill="none" stroke="#006591" stroke-dasharray="2,2" stroke-opacity="0.4" stroke-width="1"></path>
+<text fill="#006591" font-family="JetBrains Mono" font-size="7" font-weight="600" x="210" y="125">10.0m</text>
+<!-- Shallow Hazard Exclusion Zone Warning Label -->
+<rect fill="#ffdad6" height="15" opacity="0.9" rx="3" width="98" x="140" y="148"></rect>
+<text fill="#93000a" font-family="JetBrains Mono" font-size="7.5" font-weight="800" x="145" y="159">▲ ÁREA RASA EVITADA</text>
+<!-- Navigational Buoy Symbol -->
+<g transform="translate(142, 198)">
+<circle cx="0" cy="0" fill="#b15f00" r="4.5"></circle>
+<path d="M -3,-6 L 3,-6 L 0, -11 Z" fill="#b15f00"></path>
+<text fill="#2f1500" font-family="JetBrains Mono" font-size="6.5" font-weight="700" x="6" y="2">BC-04</text>
+</g>
+<!-- Active Tactical Route Path Line -->
+<polyline fill="none" points="48,82 135,162 258,188 322,96" stroke="url(#routeGrad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></polyline>
+<!-- Route Direction Indicator Chevrons -->
+<polygon fill="#004666" points="90,118 97,126 90,130"></polygon>
+<polygon fill="#004666" points="198,172 208,176 200,183"></polygon>
+<polygon fill="#004666" points="292,142 294,131 285,137"></polygon>
+<!-- Waypoint 0: Marina Porto Real (Start) -->
+<circle cx="48" cy="82" fill="#006194" r="7"></circle>
+<circle cx="48" cy="82" fill="#ffffff" r="3"></circle>
+<rect fill="#131b2e" height="18" rx="3" width="52" x="22" y="58"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="8" font-weight="700" x="26" y="70">WP0-PART</text>
+<!-- Waypoint 1: Ponta da Sela Contour -->
+<circle cx="135" cy="162" fill="#39b8fd" r="6"></circle>
+<circle cx="135" cy="162" fill="#001e2f" r="2.5"></circle>
+<rect fill="#131b2e" height="16" rx="3" width="38" x="94" y="140"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="7.5" font-weight="700" x="98" y="151">WP1: SELA</text>
+<!-- Waypoint 2: Canal do Meio -->
+<circle cx="258" cy="188" fill="#39b8fd" r="6"></circle>
+<circle cx="258" cy="188" fill="#001e2f" r="2.5"></circle>
+<rect fill="#131b2e" height="16" rx="3" width="38" x="262" y="196"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="7.5" font-weight="700" x="266" y="207">WP2: CANAL</text>
+<!-- Waypoint 3: Enseada / Ilha das Couves (Finish) -->
+<circle cx="322" cy="96" fill="#ba1a1a" r="8"></circle>
+<circle cx="322" cy="96" fill="#ffffff" r="3.5"></circle>
+<rect fill="#131b2e" height="18" rx="3" width="50" x="286" y="108"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="8" font-weight="700" x="290" y="120">WP3-CHEG</text>
+</svg>
+<!-- Overlay Floating Controls (Large targets for thumb & wet fingers) -->
+<div class="absolute top-2.5 right-2.5 flex flex-col gap-2">
+<button class="flex items-center justify-center w-11 h-11 rounded-lg bg-surface-container-lowest/95 text-on-surface shadow-md hover:bg-surface-container transition-all active:scale-95" title="Centralizar Visualização" type="button">
+<span class="material-symbols-outlined text-[22px]">filter_center_focus</span>
+</button>
+<button class="flex items-center justify-center w-11 h-11 rounded-lg bg-surface-container-lowest/95 text-on-surface shadow-md hover:bg-surface-container transition-all active:scale-95" title="Alternar Batimetria" type="button">
+<span class="material-symbols-outlined text-[22px]">layers</span>
+</button>
+</div>
+<!-- Bottom Floating Map Action Pill -->
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2">
+<button class="flex-1 flex items-center justify-center gap-1.5 h-11 bg-surface-container-lowest/95 text-on-surface rounded-lg shadow-md px-3 font-label-md text-label-md uppercase active:scale-98" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">add_location_alt</span>
+<span>Adicionar no Mapa</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 h-11 bg-surface-container-lowest/95 text-on-surface rounded-lg shadow-md px-3 font-label-md text-label-md uppercase active:scale-98" title="Inverter Sentido da Rota" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">swap_horiz</span>
+<span class="hidden sm:inline">Inverter</span>
+</button>
+</div>
+</div>
+<!-- 3. RESUMO DE NAVEGAÇÃO & TELEMETRIA ESTIMADA -->
+<div class="grid grid-cols-2 gap-2">
+<!-- Tile 1: Distância Total -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">DISTÂNCIA TOTAL</span>
+<span class="material-symbols-outlined text-primary text-[18px]">straighten</span>
+</div>
+<div class="my-1 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-[36px] leading-none font-bold text-on-surface">24.8</span>
+<span class="font-label-md text-label-md text-secondary font-bold">NM</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+          ≈ 45.9 km em rota direta
+        </div>
+</div>
+<!-- Tile 2: Tempo Estimado -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">TEMPO ESTIMADO</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+</div>
+<div class="my-1 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-[36px] leading-none font-bold text-on-surface">42</span>
+<span class="font-label-md text-label-md text-secondary font-bold">MIN</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">
+          @ 35 KT Méd. Cruzeiro
+        </div>
+</div>
+<!-- Tile 3: Consumo de Combustível -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">CONSUMO PREVISTO</span>
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">water_drop</span>
+</div>
+<div class="my-1 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-[36px] leading-none font-bold text-on-surface">26.5</span>
+<span class="font-label-md text-label-md text-tertiary-container font-bold">L</span>
+</div>
+<!-- Fuel tank visual gauge strip -->
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden mt-1">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 38%;"></div>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1 flex justify-between">
+<span>Uso: 38%</span>
+<span>Tanque: 70L</span>
+</div>
+</div>
+<!-- Tile 4: Ponto de Não Retorno (PNR) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">PONTO NÃO-RETORNO</span>
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+</div>
+<div class="my-1 flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-[36px] leading-none font-bold text-on-surface">14.2</span>
+<span class="font-label-md text-label-md text-error font-bold">NM</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+          Segurança c/ vento contra
+        </div>
+</div>
+</div>
+<!-- 4. SEQUÊNCIA E GERENCIAMENTO DE WAYPOINTS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
+<h2 class="font-headline-md text-[16px] uppercase font-bold text-on-surface">Sequência de Waypoints (4)</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">REORDENAÇÃO ATIVA</span>
+</div>
+<!-- Waypoint 0 (Departure) -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-md bg-primary text-on-primary flex items-center justify-center flex-shrink-0 font-label-md font-bold">
+          00
+        </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[9px] uppercase font-bold text-primary">PONTO DE PARTIDA</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">4.5m Prof.</span>
+</div>
+<div class="font-body-md text-[14px] font-bold text-on-surface truncate">Marina Porto Real</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">
+            23°49'12"S 045°21'44"W • SOG Rec: 10 KT
+          </div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 cursor-grab">drag_indicator</span>
+</div>
+<!-- Waypoint 1 -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest text-on-surface flex items-center justify-center flex-shrink-0 font-label-md font-bold">
+          01
+        </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[9px] uppercase font-bold text-secondary">CONTORNO COSTEIRO</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">+8.4 NM</span>
+</div>
+<div class="font-body-md text-[14px] font-bold text-on-surface truncate">Ponta da Sela (Pedras)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">
+            Rumo 112° ESE • Margem de Pedra: 300m
+          </div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 cursor-grab">drag_indicator</span>
+</div>
+<!-- Waypoint 2 -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest text-on-surface flex items-center justify-center flex-shrink-0 font-label-md font-bold">
+          02
+        </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[9px] uppercase font-bold text-secondary">MAR ABERTO</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">+11.2 NM</span>
+</div>
+<div class="font-body-md text-[14px] font-bold text-on-surface truncate">Canal Aberto Sul</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">
+            Rumo 095° E • Ondulação: 1.1m
+          </div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 cursor-grab">drag_indicator</span>
+</div>
+<!-- Waypoint 3 (Arrival) -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-md bg-error text-on-error flex items-center justify-center flex-shrink-0 font-label-md font-bold">
+          03
+        </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[9px] uppercase font-bold text-error">DESTINO / ABRIGO</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">+5.2 NM</span>
+</div>
+<div class="font-body-md text-[14px] font-bold text-on-surface truncate">Enseada do Bonete</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">
+            Rumo 040° NE • Fondeadouro Seguro
+          </div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] flex-shrink-0 cursor-grab">drag_indicator</span>
+</div>
+<!-- Add Waypoint Trigger Buttons -->
+<div class="pt-2 grid grid-cols-3 gap-1.5">
+<button class="h-10 bg-surface-container rounded-lg flex items-center justify-center gap-1 text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>Toque Mapa</span>
+</button>
+<button class="h-10 bg-surface-container rounded-lg flex items-center justify-center gap-1 text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">explore</span>
+<span>Coordenadas</span>
+</button>
+<button class="h-10 bg-surface-container rounded-lg flex items-center justify-center gap-1 text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">anchor</span>
+<span>POI Marina</span>
+</button>
+</div>
+</div>
+<!-- 5. VERIFICAÇÃO AUTOMÁTICA DE RISCOS & ALERTAS (SAFETY CLEARANCE CHECK) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">shield</span>
+<h3 class="font-headline-md text-[15px] uppercase font-bold text-on-surface">Safety Clearance Check</h3>
+</div>
+<div class="bg-secondary-container/20 text-on-secondary-container px-2 py-0.5 rounded font-label-sm text-label-sm font-bold">
+          APROVADA
+        </div>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<!-- Safety item 1 -->
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[18px] flex-shrink-0 mt-0.5">check_circle</span>
+<div class="flex-1">
+<span class="font-body-md text-[13px] font-bold text-on-surface block leading-tight">Batimetria Livre de Bancos</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nenhuma isóbata inferior a 1.2m no traçado ativo.</span>
+</div>
+</div>
+<!-- Safety item 2 -->
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary-container text-[18px] flex-shrink-0 mt-0.5">announcement</span>
+<div class="flex-1">
+<span class="font-body-md text-[13px] font-bold text-on-surface block leading-tight">Aviso aos Navegantes DHN (02)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Boia cega BC-04 com lanterna apagada na Ponta da Sela.</span>
+</div>
+</div>
+<!-- Safety item 3 -->
+<div class="flex items-start gap-2 bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">air</span>
+<div class="flex-1">
+<span class="font-body-md text-[13px] font-bold text-on-surface block leading-tight">Boletim Meteorológico Favorável</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vento Sul 12 nós • Marulho de 0.9m • Janela estável 4h.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. BARRA DE AÇÕES INFERIOR DE EXECUÇÃO (GLOVE & WET FRIENDLY) -->
+<div class="flex flex-col gap-2 pt-1">
+<!-- Main Primary Navigation Trigger (Minimum 72px tactile action) -->
+<button class="w-full h-16 rounded-xl bg-primary text-on-primary font-headline-md text-[17px] uppercase font-bold tracking-wider flex items-center justify-center gap-3 shadow-md hover:bg-primary-container active:scale-98 transition-all" type="button">
+<span class="material-symbols-outlined text-[28px]">navigation</span>
+<span>INICIAR NAVEGAÇÃO DA ROTA</span>
+</button>
+<!-- Secondary Actions: Save offline & GPX export -->
+<div class="grid grid-cols-2 gap-2">
+<button class="h-12 bg-surface-container-lowest text-on-surface rounded-xl flex items-center justify-center gap-2 font-label-md text-label-md uppercase font-bold shadow-sm hover:bg-surface-container transition-all active:scale-98" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">download_for_offline</span>
+<span>Salvar Offline</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-[10px] text-on-surface-variant">15MB</span>
+</button>
+<button class="h-12 bg-surface-container-lowest text-on-surface rounded-xl flex items-center justify-center gap-2 font-label-md text-label-md uppercase font-bold shadow-sm hover:bg-surface-container transition-all active:scale-98" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">ios_share</span>
+<span>Exportar GPX</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)]" data-active-classes="bg-inverse-surface text-inverse-on-surface shadow-sm"><div class="grid grid-cols-4 items-stretch h-20 px-gutter"><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="cockpit" href="#"><span class="material-symbols-outlined text-[26px]">speed</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cockpit</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="carta" href="#"><span class="material-symbols-outlined text-[26px]">map</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Carta</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded transition-colors bg-inverse-surface text-inverse-on-surface shadow-sm" data-path="rotas" href="#"><span class="material-symbols-outlined text-[26px]">route</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Rotas</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-error hover:bg-error-container/40 transition-colors" data-path="sos" href="#"><span class="material-symbols-outlined text-[26px]">emergency_home</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">SOS</span></a></div></nav></body></html>

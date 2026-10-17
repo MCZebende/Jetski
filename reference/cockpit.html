@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-tertiary": "#ffffff", "inverse-primary": "#93ccff", "surface-container-high": "#e2e7ff", "secondary-fixed-dim": "#89ceff", "outline": "#707881", "on-primary-fixed-variant": "#004b73", "primary-container": "#007bb9", "on-secondary-fixed": "#001e2f", "tertiary-fixed-dim": "#ffb77d", "on-tertiary-container": "#fffbff", "on-error-container": "#93000a", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "on-surface-variant": "#3f4850", "surface-container": "#eaedff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#004c6e", "outline-variant": "#bfc7d2", "surface-variant": "#dae2fd", "secondary-fixed": "#c9e6ff", "on-primary-fixed": "#001d31", "tertiary-fixed": "#ffdcc3", "on-surface": "#131b2e", "on-primary": "#ffffff", "surface-dim": "#d2d9f4", "secondary-container": "#39b8fd", "on-tertiary-fixed": "#2f1500", "on-secondary-container": "#004666", "error-container": "#ffdad6", "inverse-on-surface": "#eef0ff", "on-primary-container": "#fdfcff", "surface-bright": "#faf8ff", "on-background": "#131b2e", "on-tertiary-fixed-variant": "#6e3900", "primary-fixed-dim": "#93ccff", "surface-container-lowest": "#ffffff", "secondary": "#006591", "surface-tint": "#006398", "error": "#ba1a1a", "primary": "#006194", "on-error": "#ffffff", "surface-container-highest": "#dae2fd", "tertiary-container": "#b15f00", "on-secondary": "#ffffff", "surface": "#faf8ff", "tertiary": "#8d4b00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-lg": "2rem", "space-xl": "2.75rem", "space-md": "1.25rem", "margin": "1.5rem", "gutter-mobile": "0.75rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "margin-mobile": "1rem" }, "fontFamily": { "label-md": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["JetBrains Mono"], "body-md": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "headline-xl": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Space Grotesk"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-xl-mobile": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex items-center justify-center w-11 h-11 bg-primary text-on-primary rounded"><span class="material-symbols-outlined text-[24px]">sailing</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">JETSKINAV // OS</span><h1 class="font-headline-md text-headline-md font-bold uppercase text-on-surface leading-none tracking-tight">Cockpit</h1></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container px-space-xs py-1 rounded"><div class="flex items-center gap-0.5 text-secondary"><span class="material-symbols-outlined text-[16px]">satellite_alt</span><span class="font-label-sm text-label-sm">12</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">water_drop</span><span class="font-label-sm text-label-sm">LOCK</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center text-tertiary"><span class="material-symbols-outlined text-[16px]">light_mode</span></div><div class="w-1 h-3 bg-outline-variant/40 rounded-full"></div><div class="flex items-center gap-0.5 text-on-surface"><span class="material-symbols-outlined text-[16px]">battery_charging_full</span><span class="font-label-sm text-label-sm">94%</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 bg-surface pb-32"><div class="flex flex-col w-full px-margin-mobile pb-space-lg gap-space-sm selection:bg-secondary-container">
+<!-- BARRA DE STATUS OPERACIONAL DO COCKPIT -->
+<div class="w-full bg-surface-container rounded-lg p-space-xs flex flex-wrap items-center justify-between gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto min-w-0 py-1">
+<!-- Bateria -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-tight">88% OTIMIZADO</span>
+</div>
+<!-- GNSS RTK -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-tight">14 SATS • 0.8M</span>
+</div>
+<!-- Modo Solar -->
+<div class="hidden sm:flex items-center gap-1 bg-tertiary-fixed px-2 py-1 rounded text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-tight">SOL ALTO CONTRASTE</span>
+</div>
+</div>
+<!-- Trava de Água / Water Lock Button -->
+<button aria-label="Ativar trava de respingos de água" class="flex items-center justify-center gap-1.5 h-10 px-3 bg-inverse-surface text-inverse-on-surface rounded font-label-md text-label-md uppercase active:scale-95 transition-transform shrink-0" id="water-lock-btn" onclick="toggleWaterLock()">
+<span class="material-symbols-outlined text-[18px]" id="lock-icon" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span id="lock-text">TRAVA ÁGUA</span>
+</button>
+</div>
+<!-- AVISO DE TRAVA ATIVA (MODO SUBMERGIDO / RESPINGOS) -->
+<div class="hidden w-full bg-secondary text-on-secondary px-3 py-2 rounded flex items-center justify-between shadow-sm" id="water-lock-overlay">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] animate-pulse">lock</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wide">TELA BLOQUEADA CONTRA RESPINGOS</span>
+</div>
+<span class="font-label-sm text-label-sm underline uppercase tracking-tight" onclick="toggleWaterLock()">DESBLOQUEAR</span>
+</div>
+<!-- HUD CENTRAL DE VELOCIDADE (GLANCE SPEEDOMETER) -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between items-center text-center shadow-md relative overflow-hidden">
+<!-- Fita decorativa técnica superior -->
+<div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-secondary-container via-primary to-secondary"></div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        SOG // VELOCIDADE REAL
+      </span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-on-surface font-label-sm text-label-sm font-bold">
+        JET-V8 ECO-TUNED
+      </span>
+</div>
+<!-- Valor Gigante e Unidade Náutica -->
+<div class="flex items-baseline justify-center gap-space-xs my-1">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface font-extrabold tracking-tighter leading-none select-none">
+        58.4
+      </span>
+<div class="flex flex-col text-left">
+<span class="font-label-lg text-label-lg font-extrabold text-primary uppercase leading-tight">NÓS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold leading-none">KT</span>
+</div>
+</div>
+<!-- Conversão em Terra e Rotação do Rotor -->
+<div class="w-full flex items-center justify-center gap-space-md py-1 bg-surface-container-low rounded my-2">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span class="font-label-md text-label-md font-bold">108 KM/H</span>
+</div>
+<div class="w-1 h-3 bg-outline-variant/60 rounded-full"></div>
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">4g_mobiledata</span>
+<span class="font-label-md text-label-md font-bold">4.850 RPM</span>
+</div>
+</div>
+<!-- Barra de Tração Náutica Dinâmica (Power Thrust Arc / Bar) -->
+<div class="w-full flex flex-col gap-1 mt-1">
+<div class="w-full bg-surface-container-high h-4 rounded-full overflow-hidden p-0.5 flex items-center">
+<!-- 76% da aceleração máxima -->
+<div class="h-full bg-gradient-to-r from-secondary via-secondary-container to-primary rounded-full w-[76%] transition-all duration-300"></div>
+</div>
+<div class="w-full flex justify-between font-label-sm text-label-sm text-on-surface-variant font-bold px-1">
+<span>0</span>
+<span>TORQUE DE CRUZEIRO 76%</span>
+<span>80 KT</span>
+</div>
+</div>
+</section>
+<!-- GRID DE TELEMETRIA NÁUTICA ESSENCIAL (3 TILES DE ALTO CONTRASTE) -->
+<div class="grid grid-cols-3 gap-space-xs w-full">
+<!-- Card 1: Rumo (COG) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-xs flex flex-col justify-between items-center text-center shadow-sm min-h-[92px]">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant w-full text-left truncate">
+        RUMO // COG
+      </span>
+<div class="flex items-center gap-1 my-auto">
+<span class="material-symbols-outlined text-secondary text-[22px] transform rotate-[42deg]" style="font-variation-settings: 'FILL' 1;">
+          navigation
+        </span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold leading-none">
+          042°
+        </span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">
+        NORDESTE
+      </span>
+</div>
+<!-- Card 2: Distância Total -->
+<div class="bg-surface-container-lowest rounded-lg p-space-xs flex flex-col justify-between items-center text-center shadow-sm min-h-[92px]">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant w-full text-left truncate">
+        DISTÂNCIA
+      </span>
+<div class="flex items-baseline gap-0.5 my-auto">
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold leading-none">
+          18.6
+        </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">NM</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">
+        ~34.4 KM
+      </span>
+</div>
+<!-- Card 3: Tempo Decorrido -->
+<div class="bg-surface-container-lowest rounded-lg p-space-xs flex flex-col justify-between items-center text-center shadow-sm min-h-[92px]">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant w-full text-left truncate">
+        TEMPO TRACK
+      </span>
+<div class="flex items-center gap-1 my-auto">
+<span class="material-symbols-outlined text-tertiary text-[18px]">timer</span>
+<span class="font-label-lg text-label-lg text-on-surface font-extrabold leading-tight tracking-tighter">
+          01:14:22
+        </span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">
+        GRAVANDO
+      </span>
+</div>
+</div>
+<!-- ALERTA CRÍTICO: DETECÇÃO DE BAIXIOS E RADAR DE 10 SEGUNDOS -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-sm shadow-md flex flex-col gap-space-xs">
+<!-- Banner de Advertência de Batimetria / Baixio -->
+<div class="w-full bg-tertiary-fixed text-on-tertiary-fixed p-2.5 rounded flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold uppercase truncate">ALERTA: BANCO DE AREIA A 300M</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">PROF. ESTIMADA: 0.8M • REDUZA O MANETE</span>
+</div>
+</div>
+<span class="bg-on-tertiary-fixed text-tertiary-fixed font-label-sm text-label-sm px-2 py-1 rounded font-bold shrink-0">
+        -10S IMPACTO
+      </span>
+</div>
+<!-- Mini Radar Circular Simplificado & Projeção de Buffer -->
+<div class="w-full bg-surface-container p-space-xs rounded flex items-center justify-between gap-space-sm">
+<!-- Radar Visualizador Náutico SVG -->
+<div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<!-- Círculos de Distância (100m, 200m, 300m) -->
+<circle class="stroke-outline-variant" cx="50" cy="50" fill="none" r="45" stroke-dasharray="3,3" stroke-width="1.5"></circle>
+<circle class="stroke-outline-variant" cx="50" cy="50" fill="none" r="30" stroke-width="1.5"></circle>
+<circle class="stroke-outline-variant" cx="50" cy="50" fill="none" r="15" stroke-width="1.5"></circle>
+<!-- Eixos de Proa e Bochecha -->
+<line class="stroke-outline-variant/60" stroke-width="1" x1="50" x2="50" y1="5" y2="95"></line>
+<line class="stroke-outline-variant/60" stroke-width="1" x1="5" x2="95" y1="50" y2="50"></line>
+<!-- Feixe de Varredura Angular de 10s -->
+<path class="fill-secondary-container/30" d="M 50 50 L 35 15 A 45 45 0 0 1 65 15 Z"></path>
+<!-- Rastro do Jet Ski (Ciano Náutico) -->
+<line class="stroke-secondary-container" stroke-linecap="round" stroke-width="3" x1="50" x2="50" y1="50" y2="78"></line>
+<!-- Vetor de Proa (Heading Vector) -->
+<line class="stroke-primary" stroke-dasharray="2,2" stroke-width="2.5" x1="50" x2="50" y1="50" y2="15"></line>
+<!-- Ponto Central (O Jet Ski) -->
+<circle class="fill-primary" cx="50" cy="50" r="4"></circle>
+<!-- Obstáculo Detectado (Baixio a 300m na marcação 010°) -->
+<circle class="fill-tertiary animate-pulse" cx="54" cy="20" r="5"></circle>
+<text class="fill-tertiary font-label-sm text-[8px] font-bold" x="62" y="23">0.8M</text>
+</svg>
+</div>
+<!-- Detalhes do Buffer Dinâmico -->
+<div class="flex-1 flex flex-col justify-around h-full pr-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">SONAR BATIMÉTRICO</span>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold leading-none mt-0.5">2.4 M</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">QUILHA LIVRE // SEGURO</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full my-1.5"></div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>ALERTA DE PROXIMIDADE</span>
+<span class="text-tertiary font-bold uppercase">ATIVADO</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BARRA DE AÇÕES RÁPIDAS DO PILOTO (BOTÕES MÍNIMO 72PX DE TOQUE SEGURO COM LUVAS) -->
+<footer class="w-full grid grid-cols-12 gap-space-xs pt-1">
+<!-- SOS de Emergência Marítima (Tamanho Gigante, Acionamento 3s) -->
+<button aria-label="Emergência SOS Pressione 3 segundos" class="col-span-4 min-h-[76px] bg-error text-on-error rounded-lg flex flex-col items-center justify-center p-2 text-center active:scale-95 transition-transform shadow-md select-none relative overflow-hidden" id="sos-button" onmousedown="startSosHold()" onmouseup="cancelSosHold()" ontouchend="cancelSosHold()" ontouchstart="startSosHold()">
+<div class="absolute bottom-0 left-0 h-1.5 bg-on-error w-0 transition-all duration-100" id="sos-progress"></div>
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="font-headline-md text-headline-md font-extrabold uppercase tracking-tight leading-none">SOS</span>
+<span class="font-label-sm text-label-sm uppercase tracking-tighter opacity-90 leading-tight">SEGURE 3S</span>
+</button>
+<!-- Botão Central: Gravação de Tracking GPX -->
+<button aria-label="Pausar ou Retomar Gravação GPX" class="col-span-5 min-h-[76px] bg-surface-container-highest text-on-surface rounded-lg flex flex-col items-center justify-center p-2 text-center active:scale-95 transition-transform shadow-sm" id="tracking-btn" onclick="toggleTracking()">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[24px] text-tertiary" id="track-icon" style="font-variation-settings: 'FILL' 1;">pause_circle</span>
+<span class="font-label-lg text-label-lg font-bold uppercase tracking-tight" id="track-label">PAUSAR</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">
+        1.420 PTS GPX
+      </span>
+</button>
+<!-- Botão Direita: Alternância Rápida para Carta Náutica Completa -->
+<a aria-label="Alternar para visualização de Mapa Náutico" class="col-span-3 min-h-[76px] bg-primary text-on-primary rounded-lg flex flex-col items-center justify-center p-2 text-center active:scale-95 transition-transform shadow-sm" data-path="carta-nautica" href="#">
+<span class="material-symbols-outlined text-[24px]">map</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider mt-1">MAPA</span>
+<span class="material-symbols-outlined text-[16px] leading-none">arrow_forward</span>
+</a>
+</footer>
+<!-- DIÁLOGO MODAL SIMULADO DE SOS DISPARADO (INVISÍVEL POR PADRÃO) -->
+<div class="hidden fixed inset-0 z-50 bg-on-surface/80 flex items-center justify-center p-margin" id="sos-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest p-space-md rounded-lg shadow-2xl flex flex-col items-center text-center gap-space-sm">
+<div class="w-14 h-14 rounded-full bg-error text-on-error flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-[32px]">sos</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-extrabold text-on-surface uppercase">SOS TRANSMITIDO!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Coordenadas GNSS e alerta de socorro retransmitidos via Rádio DSC e Guarda Costeira (Canal 16).
+      </p>
+<div class="bg-surface-container p-2 rounded w-full font-label-md text-label-md font-bold text-on-surface">
+        COORD: 23°58'12"S 046°17'45"W
+      </div>
+<button class="w-full min-h-[64px] bg-inverse-surface text-inverse-on-surface rounded font-label-lg text-label-lg uppercase font-bold" onclick="closeSosModal()">
+        CANCELAR FALSO ALARME
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // LÓGICA DE INTERAÇÃO DO COCKPIT //
+  let waterLocked = false;
+  let isTracking = true;
+  let sosTimer = null;
+  let sosHoldProgress = 0;
+  let progressInterval = null;
+
+  function toggleWaterLock() {
+    waterLocked = !waterLocked;
+    const overlay = document.getElementById('water-lock-overlay');
+    const lockIcon = document.getElementById('lock-icon');
+    const lockText = document.getElementById('lock-text');
+    const lockBtn = document.getElementById('water-lock-btn');
+
+    if (waterLocked) {
+      overlay.classList.remove('hidden');
+      lockText.innerText = "TRAVADO";
+      lockBtn.classList.replace('bg-inverse-surface', 'bg-secondary');
+      lockBtn.classList.replace('text-inverse-on-surface', 'text-on-secondary');
+      if (navigator.vibrate) navigator.vibrate(200);
+    } else {
+      overlay.classList.add('hidden');
+      lockText.innerText = "TRAVA ÁGUA";
+      lockBtn.classList.replace('bg-secondary', 'bg-inverse-surface');
+      lockBtn.classList.replace('text-on-secondary', 'text-inverse-on-surface');
+      if (navigator.vibrate) navigator.vibrate([80, 50, 80]);
+    }
+  }
+
+  function toggleTracking() {
+    if (waterLocked) return;
+    isTracking = !isTracking;
+    const label = document.getElementById('track-label');
+    const icon = document.getElementById('track-icon');
+    
+    if (isTracking) {
+      label.innerText = "PAUSAR";
+      icon.innerText = "pause_circle";
+      icon.classList.replace('text-primary', 'text-tertiary');
+    } else {
+      label.innerText = "RETOMAR";
+      icon.innerText = "play_circle";
+      icon.classList.replace('text-tertiary', 'text-primary');
+    }
+    if (navigator.vibrate) navigator.vibrate(60);
+  }
+
+  function startSosHold() {
+    if (waterLocked) return;
+    const progressBar = document.getElementById('sos-progress');
+    sosHoldProgress = 0;
+    progressBar.style.width = '0%';
+
+    progressInterval = setInterval(() => {
+      sosHoldProgress += 5;
+      progressBar.style.width = sosHoldProgress + '%';
+      if (sosHoldProgress >= 100) {
+        clearInterval(progressInterval);
+        triggerSos();
+      }
+    }, 150); // ~3 segundos total (20 passos * 150ms)
+  }
+
+  function cancelSosHold() {
+    clearInterval(progressInterval);
+    const progressBar = document.getElementById('sos-progress');
+    progressBar.style.width = '0%';
+    sosHoldProgress = 0;
+  }
+
+  function triggerSos() {
+    const modal = document.getElementById('sos-modal');
+    modal.classList.remove('hidden');
+    if (navigator.vibrate) navigator.vibrate([300, 150, 300, 150, 600]);
+  }
+
+  function closeSosModal() {
+    document.getElementById('sos-modal').classList.add('hidden');
+    cancelSosHold();
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="bg-inverse-surface text-inverse-on-surface font-bold"><div class="grid grid-cols-4 items-stretch h-20 px-gutter"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded transition-colors bg-inverse-surface text-inverse-on-surface font-bold" data-path="cockpit" href="#"><span class="material-symbols-outlined text-[26px]">speed</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cockpit</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="carta-nautica" href="#"><span class="material-symbols-outlined text-[26px]">map</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Carta</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="rotas-waypoints" href="#"><span class="material-symbols-outlined text-[26px]">polyline</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Rotas</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[56px] my-2 rounded text-error hover:bg-error-container/40 transition-colors" data-path="emergencia-sos" href="#"><span class="material-symbols-outlined text-[26px]">emergency_home</span><span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">SOS</span></a></div></nav></body></html>

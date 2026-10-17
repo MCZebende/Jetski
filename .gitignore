@@ -1,0 +1,10 @@
+# Segredos e configurações locais do IDE
+.cursor/
+.env
+.env.*
+
+# Cache Python / SO
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+{
+  "id": "1636",
+  "title": "Porto de Angra dos Reis e proximidades",
+  "aviso": "2026-89",
+  "scale": "22000",
+  "datum": "WGS84",
+  "south": -23.133333299943,
+  "north": -22.991666709044,
+  "west": -44.3833333,
+  "east": -44.171666707138,
+  "url": "charts/1636.png",
+  "width": 3287,
+  "height": 2377,
+  "source": "163601.KAP"
+}
